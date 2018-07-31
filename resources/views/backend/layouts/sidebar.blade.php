@@ -7,14 +7,22 @@
 <div class="sidebar-menu">
     <ul class="sidebar-nav">
         <li class="active">
-            <a href="./index.html">
+            <a href="{{route('admin.home')}}">
                 <div class="icon">
                     <i class="fa fa-tasks" aria-hidden="true"></i>
                 </div>
                 <div class="title">Dashboard</div>
             </a>
         </li>
-        <li class="@@menu.messaging">
+        <li class="">
+            <a href="{{route('admin.about_me')}}">
+                <div class="icon">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                </div>
+                <div class="title">About Me</div>
+            </a>
+        </li>
+        <li class="">
             <a href="./messaging.html">
                 <div class="icon">
                     <i class="fa fa-comments" aria-hidden="true"></i>

@@ -19,9 +19,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 //backend
-Route::group(['namespace'=>'Backend','prefix'=>'admin','as'=>'.admin','middleware'=>'auth'],function (){
+Route::group(['namespace'=>'Backend','prefix'=>'admin','as'=>'admin.','middleware'=>'auth'],function (){
+        Route::get('home','HomeController@index')->name('home');
+        Route::get('about_me','AboutMeController@index')->name('about_me');
+        Route::get('about_me_basics','AboutMeController@aboutMeBasics')->name('about_me_basics');
+        Route::post('save_about_me','AboutMeController@saveRecord')->name('save_about_me');
 
-    Route::get('silly',function (){
-        return view('backend.dashboard');
-    });
 });
