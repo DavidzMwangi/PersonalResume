@@ -23,11 +23,11 @@
             </a>
         </li>
         <li class="">
-            <a href="./messaging.html">
+            <a href="{{route('admin.technical_skills')}}">
                 <div class="icon">
-                    <i class="fa fa-comments" aria-hidden="true"></i>
+                    <i class="fa fa-comment" aria-hidden="true"></i>
                 </div>
-                <div class="title">Messaging</div>
+                <div class="title">Technical Skills</div>
             </a>
         </li>
         <li class="dropdown ">

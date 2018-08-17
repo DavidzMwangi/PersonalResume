@@ -25,4 +25,9 @@ Route::group(['namespace'=>'Backend','prefix'=>'admin','as'=>'admin.','middlewar
         Route::get('about_me_basics','AboutMeController@aboutMeBasics')->name('about_me_basics');
         Route::post('save_about_me','AboutMeController@saveRecord')->name('save_about_me');
 
+        //technical skills
+        Route::get('technical_skills','TechnicalSkillController@index')->name('technical_skills');
+        Route::post('save_technical_skill','TechnicalSkillController@saveTechnicalSkill')->name('save_technical_skill');
+        Route::get('technical_skills_basics','TechnicalSkillController@technicalSkillsBasics')->name('technical_skills_basics');
+
 });
