@@ -85,7 +85,7 @@
                             <td>@{{record.index}}%</td>
                             <td>@{{ record.created_at }}</td>
                             <td><button class="btn btn-primary">Edit</button></td>
-                            <td><button class="btn btn-danger">Delete</button></td>
+                            <td><button class="btn btn-danger" @click="deleteSkill(record.id)">Delete</button></td>
 
                         </tr>
 
@@ -134,6 +134,7 @@
                         .then(res=>{
                             $('#skill_name').val("");
                             $('#index').val("");
+                            window.location='{{route('admin.technical_skills')}}'
                             // me.records=res.data.technical_skills;
 
                             // me.record=res.data.about
@@ -169,6 +170,17 @@
                             alert('controller')
                         })
                 },
+                deleteSkill:function (id) {
+                    let url12='{{route('admin.delete_technical_skill')}}';
+
+                    axios.post(url12,{'id':id})
+                        .then(res=>{
+                            window.location='{{route('admin.technical_skills')}}'
+                        })
+                        .catch(res=>{
+
+                        })
+                }
             }
 
         })

@@ -29,5 +29,6 @@ Route::group(['namespace'=>'Backend','prefix'=>'admin','as'=>'admin.','middlewar
         Route::get('technical_skills','TechnicalSkillController@index')->name('technical_skills');
         Route::post('save_technical_skill','TechnicalSkillController@saveTechnicalSkill')->name('save_technical_skill');
         Route::get('technical_skills_basics','TechnicalSkillController@technicalSkillsBasics')->name('technical_skills_basics');
+        Route::post('delete_technical_skill','TechnicalSkillController@deleteSkill')->name('delete_technical_skill');
 
 });

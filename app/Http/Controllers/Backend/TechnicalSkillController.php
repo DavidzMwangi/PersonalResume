@@ -36,4 +36,14 @@ class TechnicalSkillController extends Controller
             'technical_skills'=>TechnicalSkill::all()
         ]);
     }
+
+    public function deleteSkill(Request $request)
+    {
+        $id=$request->input('id');
+        TechnicalSkill::find($id)->delete();
+
+        return response()->json([
+            'success'=>true
+        ]);
+    }
 }
