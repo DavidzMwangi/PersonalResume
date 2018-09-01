@@ -33,5 +33,11 @@ Route::group(['namespace'=>'Backend','prefix'=>'admin','as'=>'admin.','middlewar
 
 
         //professional skills
-        Route::get('professional_skills','ProfessionalSkillController@index')->name('professional_skills');
+        Route::get('professional_skills','ProfessionalSkillController')->name('professional_skills');
+        Route::post('save_professional_skill','ProfessionalSkillController@saveData')->name('save_professional_skill');
+        Route::get('all_professional_skills','ProfessionalSkillController@allSkills')->name('all_professional_skills');
+        Route::get('delete_professional_skill/{id}','ProfessionalSkillController@delete');
+
+        //interest routes
+        Route::get('interest','InterestController')->name('interest');
 });

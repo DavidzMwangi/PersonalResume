@@ -22,12 +22,30 @@
                 <div class="title">About Me</div>
             </a>
         </li>
+        {{--<li class="">--}}
+            {{--<a href="{{route('admin.technical_skills')}}">--}}
+                {{--<div class="icon">--}}
+                    {{--<i class="fa fa-comment" aria-hidden="true"></i>--}}
+                {{--</div>--}}
+                {{--<div class="title">Technical Skills</div>--}}
+            {{--</a>--}}
+        {{--</li>--}}
+
+
+        {{--<li class="">--}}
+            {{--<a href="{{route('admin.professional_skills')}}">--}}
+                {{--<div class="icon">--}}
+                    {{--<i class="fa fa-comment" aria-hidden="true"></i>--}}
+                {{--</div>--}}
+                {{--<div class="title">Professional Skills</div>--}}
+            {{--</a>--}}
+        {{--</li>--}}
         <li class="">
-            <a href="{{route('admin.technical_skills')}}">
+            <a href="{{route('admin.interest')}}">
                 <div class="icon">
                     <i class="fa fa-comment" aria-hidden="true"></i>
                 </div>
-                <div class="title">Technical Skills</div>
+                <div class="title">Interest</div>
             </a>
         </li>
         <li class="dropdown ">
@@ -35,22 +53,21 @@
                 <div class="icon">
                     <i class="fa fa-cube" aria-hidden="true"></i>
                 </div>
-                <div class="title">UI Kits</div>
+                <div class="title">Skills</div>
             </a>
             <div class="dropdown-menu">
                 <ul>
-                    <li class="section"><i class="fa fa-file-o" aria-hidden="true"></i> UI Kits</li>
-                    <li><a href="./uikits/customize.html">Customize</a></li>
-                    <li><a href="./uikits/components.html">Components</a></li>
-                    <li><a href="./uikits/card.html">Card</a></li>
-                    <li><a href="./uikits/form.html">Form</a></li>
-                    <li><a href="./uikits/table.html">Table</a></li>
-                    <li><a href="./uikits/icons.html">Icons</a></li>
-                    <li class="line"></li>
-                    <li class="section"><i class="fa fa-file-o" aria-hidden="true"></i> Advanced Components</li>
-                    <li><a href="./uikits/pricing-table.html">Pricing Table</a></li>
-                    <!-- <li><a href="./uikits/timeline.html">Timeline</a></li> -->
-                    <li><a href="./uikits/chart.html">Chart</a></li>
+                    <li class="section"><i class="fa fa-file-o" aria-hidden="true"></i>Skills</li>
+                    <li><a href="{{route('admin.technical_skills')}}">Technical Skills</a></li>
+                    <li><a href="{{route('admin.professional_skills')}}">Professional Skills</a></li>
+                    {{--<li><a href="./uikits/card.html">Card</a></li>--}}
+                    {{--<li><a href="./uikits/form.html">Form</a></li>--}}
+                    {{--<li><a href="./uikits/table.html">Table</a></li>--}}
+                    {{--<li><a href="./uikits/icons.html">Icons</a></li>--}}
+                    {{--<li class="line"></li>--}}
+                    {{--<li class="section"><i class="fa fa-file-o" aria-hidden="true"></i> Advanced Components</li>--}}
+                    {{--<li><a href="./uikits/pricing-table.html">Pricing Table</a></li>--}}
+                    {{--<li><a href="./uikits/chart.html">Chart</a></li>--}}
                 </ul>
             </div>
         </li>
@@ -78,13 +95,13 @@
         </li>
     </ul>
 </div>
-<div class="sidebar-footer">
-    <ul class="menu">
-        <li>
-            <a href="/" class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-cogs" aria-hidden="true"></i>
-            </a>
-        </li>
-        <li><a href="#"><span class="flag-icon flag-icon-th flag-icon-squared"></span></a></li>
-    </ul>
-</div>
+{{--<div class="sidebar-footer">--}}
+    {{--<ul class="menu">--}}
+        {{--<li>--}}
+            {{--<a href="/" class="dropdown-toggle" data-toggle="dropdown">--}}
+                {{--<i class="fa fa-cogs" aria-hidden="true"></i>--}}
+            {{--</a>--}}
+        {{--</li>--}}
+        {{--<li><a href="#"><span class="flag-icon flag-icon-th flag-icon-squared"></span></a></li>--}}
+    {{--</ul>--}}
+{{--</div>--}}

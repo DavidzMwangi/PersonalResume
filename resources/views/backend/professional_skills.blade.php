@@ -70,7 +70,7 @@
 
 
         <br>
-        <div class="row" id="technical_skill_form2">
+        <div class="row" >
             <div class="col-xs-12">
                 <div class="card">
                     <div class="card-header">
@@ -81,8 +81,9 @@
                             <thead>
                             <tr>
                                 <th>Skill Name</th>
-                                <th>Index(Percentage)</th>
-                                <th>Creation Date</th>
+                                <th>Description</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
                                 <th>Edit</th>
                                 <th>Delete</th>
 
@@ -90,14 +91,15 @@
                             </thead>
                             <tbody>
 
-                            {{--<tr v-for="(record,key) in records">--}}
-                                {{--<td>@{{ record.skill_name }}</td>--}}
-                                {{--<td>@{{record.index}}%</td>--}}
-                                {{--<td>@{{ record.created_at }}</td>--}}
-                                {{--<td><button class="btn btn-primary">Edit</button></td>--}}
-                                {{--<td><button class="btn btn-danger" @click="deleteSkill(record.id)">Delete</button></td>--}}
+                            <tr v-for="(professional_skill,key) in professional_skills">
+                                <td>@{{ professional_skill.skill_name }}</td>
+                                <td>@{{professional_skill.description}}</td>
+                                <td>@{{ professional_skill.start_date }}</td>
+                                <td>@{{ professional_skill.end_date }}</td>
+                                <td><button class="btn btn-primary">Edit</button></td>
+                                <td><button class="btn btn-danger" @click="deleteSkill(professional_skill.id)">Delete</button></td>
 
-                            {{--</tr>--}}
+                            </tr>
 
                             </tbody>
                         </table>
@@ -122,14 +124,47 @@
                 skill_name:'',
                 description:'',
                 start_date:'',
-                end_date:''
+                end_date:'',
+                professional_skills:[]
             },
             created:function () {
-
+                this.getRecords();
             },
             methods:{
                 saveForm:function () {
-                    alert("hehe")
+                    let me=this;
+                    let url1='{{route('admin.save_professional_skill')}}';
+                    axios.post(url1,{'skill_name':me.skill_name,'description':me.description,'start_date':me.start_date,'end_date':me.end_date})
+                        .then(res=>{
+                            me.professional_skills=res.data.professional_skills;
+                        })
+                        .catch(err=>{
+
+                        })
+                },
+
+                getRecords:function () {
+                    let me=this;
+                    let url2='{{route('admin.all_professional_skills')}}';
+                    axios.get(url2)
+                        .then(res=>{
+                            me.professional_skills=res.data.records;
+                        })
+                        .catch(err=>{
+
+                        })
+                },
+                deleteSkill:function (id) {
+                    let me=this;
+                    let url3='{{url('admin/delete_professional_skill')}}'+'/'+id;
+                    axios.get(url3)
+                        .then(res=>{
+                            me.getRecords();
+                        })
+                        .catch(err=>{
+
+                        })
+
                 }
             }
         })
