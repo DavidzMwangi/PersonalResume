@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 
 class InterestController extends Controller
 {
-    //
+
     public function __invoke()
     {
         return view('backend.interest');

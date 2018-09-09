@@ -43,4 +43,8 @@ Route::group(['namespace'=>'Backend','prefix'=>'admin','as'=>'admin.','middlewar
         Route::get('all_interests','InterestController@allInterest')->name('all_interests');
         Route::post('save_interest','InterestController@saveInterest')->name('save_interest');
         Route::post('delete_interest','InterestController@deleteInterest')->name('delete_interest');
+
+        //experience routes
+        Route::get('experience','ExperienceController')->name('experience');
+
 });

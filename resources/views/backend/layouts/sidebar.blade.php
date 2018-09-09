@@ -71,6 +71,18 @@
                 </ul>
             </div>
         </li>
+
+
+        <li class="">
+            <a href="{{route('admin.experience')}}">
+                <div class="icon">
+                    <i class="fa fa-comment" aria-hidden="true"></i>
+                </div>
+                <div class="title">Experience</div>
+            </a>
+        </li>
+
+
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <div class="icon">

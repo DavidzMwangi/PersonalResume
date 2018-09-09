@@ -83,7 +83,14 @@
                         <tr v-for="(record,key) in records">
                             <td>@{{ record.skill_name }}</td>
                             <td>@{{record.index}}%</td>
-                            <td>@{{ record.created_at }}</td>
+                            <td>
+
+                            @{{ record.created_at }}<?php
+
+                            ?>
+                            </td>
+
+
                             <td><button class="btn btn-primary">Edit</button></td>
                             <td><button class="btn btn-danger" @click="deleteSkill(record.id)">Delete</button></td>
 
