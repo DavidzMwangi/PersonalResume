@@ -128,6 +128,9 @@
                     if (this.interest_name=='' || this.rating == ''  ){
                         alert("Ensure the Interest Name and Rating are not empty");
                         return null;
+                    }else if(this.rating>100){
+                        alert("Rating should be less that 100");
+                        return null;
                     }
                     //save the record
                     let url23='{{route('admin.save_interest')}}';
