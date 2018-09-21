@@ -1,9 +1,9 @@
-<div class="sidebar-header">
-    <a class="sidebar-brand" href="#"><span class="highlight">Flat v3</span> Admin</a>
-    <button type="button" class="sidebar-toggle">
-        <i class="fa fa-times"></i>
-    </button>
-</div>
+{{--<div class="sidebar-header">--}}
+    {{--<a class="sidebar-brand" href="#"><span class="highlight">Flat v3</span> Admin</a>--}}
+    {{--<button type="button" class="sidebar-toggle">--}}
+        {{--<i class="fa fa-times"></i>--}}
+    {{--</button>--}}
+{{--</div>--}}
 <div class="sidebar-menu">
     <ul class="sidebar-nav">
         <li class="active">
@@ -79,6 +79,14 @@
                     <i class="fa fa-comment" aria-hidden="true"></i>
                 </div>
                 <div class="title">Experience</div>
+            </a>
+        </li>
+     <li class="">
+            <a href="{{route('admin.projects')}}">
+                <div class="icon">
+                    <i class="fa fa-comment" aria-hidden="true"></i>
+                </div>
+                <div class="title">Projects</div>
             </a>
         </li>
 

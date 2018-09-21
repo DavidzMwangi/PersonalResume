@@ -48,4 +48,8 @@ Route::group(['namespace'=>'Backend','prefix'=>'admin','as'=>'admin.','middlewar
         Route::get('experience','ExperienceController')->name('experience');
         Route::post('save_experience','ExperienceController@saveExperience')->name('save_experience');
 
+        //projects routes
+        Route::get('projects','ProjectController')->name('projects');
+        Route::post('save_project','ProjectController@saveProject')->name('save_project');
+
 });
