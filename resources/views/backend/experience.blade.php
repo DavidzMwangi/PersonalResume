@@ -51,7 +51,7 @@
 
                             <div class=" form-group col-md-4 col-lg-4 col-sm-12">
                                 <label for="company_email">Company Email</label>
-                                <input class="form-control" v-model="company_email" name="company_email" placeholder="Company Name" id="company_email"   required >
+                                <input class="form-control" v-model="company_email" name="company_email" placeholder="Company Name" type="email" id="company_email"   required >
                             </div>
 
                             <div class=" form-group col-md-4 col-lg-4 col-sm-12">
@@ -60,7 +60,7 @@
                             </div>
 
                             <div class="form-group col-md-12 col-lg-12 col-sm-12">
-                                <button class="btn btn-success" type="button"  @click="saveExperience" id="submit">Submit</button>
+                                <button class="btn btn-success" onsubmit="return false"  @click="saveExperience" id="submit">Submit</button>
                             </div>
 
                         </form>
@@ -88,15 +88,32 @@
                         <table class=" table table-striped primary" id="experience_table" cellspacing="0" width="100%">
                             <thead>
                             <tr>
-                                <th>Interest Name</th>
-                                <th>Rating</th>
-                                <th>Edit</th>
-                                <th>Delete</th>
+                                <th>No</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                                <th>Description</th>
+                                <th>Company Name</th>
+                                <th>Company Email</th>
+                                <th>Company Website</th>
 
                             </tr>
                             </thead>
                             <tbody>
 
+
+                            @foreach($experiences as $experience)
+                                <tr>
+                                    <td>{{$loop->iteration}}</td>
+                                    <td>{{$experience->start_date}}</td>
+                                    <td>{{$experience->end_date}}</td>
+                                    <td>{{$experience->description}}</td>
+                                    <td>{{$experience->company}}</td>
+                                    <td>{{$experience->company_email}}</td>
+                                    <td>{{$experience->company_website}}</td>
+                                </tr>
+
+
+                                @endforeach
                             {{--<tr v-for="(interest,key) in interests">--}}
                                 {{--<td>@{{interest.name }}</td>--}}
                                 {{--<td>@{{interest.rating}}</td>--}}
@@ -141,7 +158,25 @@
             },
             methods:{
                 saveExperience:function () {
+                    let form=document.forms.namedItem('interest_form');
 
+                    let formData=new FormData(form);
+
+                    let url='{{route('admin.save_experience')}}';
+                    axios.post(url,formData)
+                        .then(res=>{
+                        window.location='{{route('admin.experience')}}';
+                        })
+                        .catch(err=>{
+                            swal("Warning!", "An error occurred. Please retry", "warning");
+
+                           //  swal({
+                           //     title: "Good job!",
+                           //     text: "You clicked the button!",
+                           //     icon: "warning",
+                           //     button: "Aww yiss!",
+                           // })
+                        })
                 }
             }
         })

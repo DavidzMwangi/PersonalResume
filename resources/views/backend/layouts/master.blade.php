@@ -14,6 +14,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('backend/css/theme/red.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('backend/css/theme/yellow.css')}}">
     {{--<link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}">--}}
+    <link rel="stylesheet" href="{{asset("plugins/sweetalert/dist/sweetalert.css")}}">
 
 
     @yield('style')
@@ -243,6 +244,7 @@
 <script type="text/javascript" src="{{asset('backend/js/vendor.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/app.js')}}"></script>
 <script type="text/javascript" src="{{asset('plugins/vue/vue.min.js')}}"></script>
+<script src="{{asset("plugins/sweetalert/dist/sweetalert.min.js")}}"></script>
 
 {{--<script type="text/javascript" src="{{asset('backend/js/app.js')}}"></script>--}}
 

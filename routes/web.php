@@ -46,5 +46,6 @@ Route::group(['namespace'=>'Backend','prefix'=>'admin','as'=>'admin.','middlewar
 
         //experience routes
         Route::get('experience','ExperienceController')->name('experience');
+        Route::post('save_experience','ExperienceController@saveExperience')->name('save_experience');
 
 });
