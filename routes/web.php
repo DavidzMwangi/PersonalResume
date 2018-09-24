@@ -52,4 +52,10 @@ Route::group(['namespace'=>'Backend','prefix'=>'admin','as'=>'admin.','middlewar
         Route::get('projects','ProjectController')->name('projects');
         Route::post('save_project','ProjectController@saveProject')->name('save_project');
 
+
+        //profile route
+        Route::get('profile','UserController')->name('profile');
+        Route::post('change_password','UserController@changePassword')->name('change_password');
+        Route::post('update_basic_data','UserController@updateBasicData')->name('update_basic_data');
+        Route::post('update_other_form','UserController@updateOtherForm')->name('update_other_form');
 });

@@ -169,17 +169,17 @@
                             </div>
                         </li>
                         <li class="dropdown profile">
-                            <a href="/html/pages/profile.html" class="dropdown-toggle"  data-toggle="dropdown">
-                                <img class="profile-img" src="./assets/images/profile.png">
+                            <a href="{{route('admin.profile')}}" class="dropdown-toggle"  data-toggle="dropdown">
+                                <img class="profile-img" src="{{asset('img/image.jpg')}}">
                                 <div class="title">Profile</div>
                             </a>
                             <div class="dropdown-menu">
                                 <div class="profile-info">
-                                    <h4 class="username">Scott White</h4>
+                                    <h4 class="username">{{\Illuminate\Support\Facades\Auth::user()->name}}</h4>
                                 </div>
                                 <ul class="action">
                                     <li>
-                                        <a href="#">
+                                        <a href="{{route('admin.profile')}}">
                                             Profile
                                         </a>
                                     </li>
@@ -232,7 +232,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="footer-copyright">
-                        Copyright © 2016 Company Co,Ltd.
+                        Copyright © {{date('Y')}} Company Co,Ltd.
                     </div>
                 </div>
             </div>
