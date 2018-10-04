@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
 Auth::routes();
 
@@ -58,4 +58,15 @@ Route::group(['namespace'=>'Backend','prefix'=>'admin','as'=>'admin.','middlewar
         Route::post('change_password','UserController@changePassword')->name('change_password');
         Route::post('update_basic_data','UserController@updateBasicData')->name('update_basic_data');
         Route::post('update_other_form','UserController@updateOtherForm')->name('update_other_form');
+
+        //inbox routes
+        Route::get('inbox','InboxController')->name('inbox');
+        Route::get('all_inbox','InboxController@allInbox')->name('all_inbox');
 });
+
+//Route::group(['namespace'=>'Backend','prefix'=>'admin','as'=>'admin.','middleware'=>'auth'],function (){
+Route::group(['namespace'=>'Frontend'],function (){
+   Route::get('/','HomeController');
+});
+
+
